@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Map</title>
+    <style>
+        body {
+            color: #CCCCCC;
+        }
+        .solar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #title:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body style="background: url('Starry_Background.jpg')">
+        <map name="SolarMap">
+            <area shape="circle" coords="680 340 80" alt="Jupiter" href="https://solarsystem.nasa.gov/planets/jupiter/overview/" target="_blank" />
+            <area shape="polygon" coords="230 330 340 325 390 270 460 330 540 345 455 350 380 400 330 350" alt="Saturn" href="https://solarsystem.nasa.gov/planets/saturn/overview/" target="_blank" />
+            <area shape="circle" coords="920 340 10" alt="Earth" href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank" />
+            <area shape="rect" coords="1070 0 1200 670" alt="Sun" href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank" />
+        </map>
+    <div class="solar">
+        <h2 id="title" style="text-align: center;">Solar Photo Map</h2>
+        <img src="Solar_System.jpg" usemap="#SolarMap" alt="Solar System" />
+    </div>
+
+</body>
+</html>
