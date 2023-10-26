@@ -1,0 +1,22 @@
+<web-app>
+    <servlet>
+      <servlet-name>SpaceSession</servlet-name>
+      <servlet-class>SpaceSession</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpaceSession</servlet-name>
+        <url-pattern>/spacesession</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>RestoreSpaceSession</servlet-name>
+      <servlet-class>RestoreSpaceSession</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RestoreSpaceSession</servlet-name>
+        <url-pattern>/restorespacesession</url-pattern>
+    </servlet-mapping>
+
+</web-app>
