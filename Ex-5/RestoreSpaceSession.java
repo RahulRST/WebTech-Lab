@@ -9,9 +9,6 @@ public class RestoreSpaceSession extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>Session Restored</h1>");
         out.println("<h2>Planet: " + session.getAttribute("planet") + "</h2>");
-        XMLHttpRequest xhr = new XMLHttpRequest(new URL("https://api.le-systeme-solaire.net/rest/bodies/"+session.getAttribute("planet")));
-        xhr.responseType = "json";
-        xhr.send();
         out.println("</body></html>");
     }
 }

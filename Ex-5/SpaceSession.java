@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 class SpaceSession extends HttpSession {
     @override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
+        HttpSession session = new HttpSession();
         session.setAttribute("planet",request.getParameter("planet"));
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
