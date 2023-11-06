@@ -74,7 +74,7 @@ The objective of this exercise is to explore and implement various approaches to
 
 # Procedure
 1. Create HTML Structure: Develop an HTML file and incorporate content representing the subject matter.
-2. Implement Internal CSS: Insert a <style> tag within the HTML's <head> section to apply internal CSS styles directly to the document.
+2. Implement Internal CSS: Insert a ``<style>`` tag within the HTML's ``<head>`` section to apply internal CSS styles directly to the document.
 3. External CSS Linkage: Create an external CSS file, and use the <link> tag within the HTML to connect the external CSS file to the document, enabling centralized and reusable styling.
 4. Utilize Inline CSS: Apply inline CSS directly to specific HTML elements for targeted styling.
 5. Styling the Content: Define and customize CSS rules to enhance the appearance, layout, and interactivity of the HTML content. Employ selectors and properties to style elements and create visual effects.
