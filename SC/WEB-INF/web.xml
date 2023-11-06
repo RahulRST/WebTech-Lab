@@ -1,0 +1,21 @@
+<web-app>
+  <servlet>
+    <servlet-name>SpaceCookie</servlet-name>
+    <servlet-class>SpaceCookie</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>SpaceCookie</servlet-name>
+      <url-pattern>/spacecookie</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RestoreSpaceCookie</servlet-name>
+    <servlet-class>RestoreSpaceCookie</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>RestoreSpaceCookie</servlet-name>
+      <url-pattern>/restorespacecookie</url-pattern>
+  </servlet-mapping>
+</web-app>

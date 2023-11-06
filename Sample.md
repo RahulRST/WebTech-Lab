@@ -332,7 +332,6 @@ select {
     justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
-    /* height: 100vh; */
 }
 ```
 * script.js
@@ -370,6 +369,71 @@ const handleSelect = (e) => {
 
 # Output
 ![Space Data Validation](Ex-3/Output/Snap.png)
+
+<div style="page-break-after: always"></div>
+
+<h1 align="center">Installation of Tomcat</h1>
+
+- Ex No. : 4
+- Date :
+
+# Aim
+The aim of this exercise is to learn about the installation of Tomcat.
+
+# Procedure
+Ex.No: 4
+
+Installation of Apache Tomcat Web Server
+Date: 
+
+Aim:
+To install Apache Tomcat web server.
+
+Procedure:
+1. Create a folder to keep all your works.
+2. Download and install Apache Tomcat separately OR install XAMPP package which comes with both Apache server and Tomcat.
+3. Check if Java is installed. If not, install it
+4. Go to Windows environment variables and make sure that both JDK and JRE binaries are added to Path.
+5. Configure the Tomcat server.
+6. Start Tomcat server.
+- Note: The Tomcat's executable programs and scripts are kept in the "bin" sub-directory of the Tomcat installed directory.
+- For Windows, suppose Tomcat is installed in location “C:\xampp\tomcat”  (which is the default location in case of Xampp installation).
+
+#### Launch a CMD shell command issue:
+
+```C:	[ Change drive ]
+
+cd \xampp\tomcat\bin	[ Change directory to Tomcat's binary directory startup ]
+
+startup	[ Run startup.bat to start tomcat server ]
+```
+
+7. Open a web browser of your choice (Chrome, Firefox, Bing) which acts as an HTTP client. Type the URL "localhost:8080" to view the Tomcat server's welcome page. 
+
+- The hostname “localhost” which refers to the IP address 127.0.0.1 is meant for local loop-back testing within the same machine.
+
+8. For users on the other machines over the net, they have to use the server's IP address or DNS domain name in the form of "http://serverHostnameOrIPAddress:8080".
+
+9. Try opening “http://localhost:8080/examples” to view the servlet and JSP examples. Try running some of the servlet examples.
+
+
+10. Shutdown the Server
+- For Windows, you can shut down the tomcat server by either:
+- Press ‘Ctrl’ + ‘C’ on the Tomcat console.
+
+#### Run "<TOMCAT_HOME>\bin\shutdown.bat" script. 
+
+
+- Open a new cmd terminal and issue: C:	[ Change the current drive ]
+
+``` 
+cd \xampp\tomcat\bin	[ Change directory to your Tomcat's binary directory ]
+
+shutdown 	[ Run shutdown.bat to shutdown the server ]
+```
+
+# Result:
+Thus, Apache Tomcat web server has been installed successfully.
 
 <div style="page-break-after: always"></div>
 
@@ -493,6 +557,306 @@ select {
 # Output
 ![Servlet Basics](Ex-5A/Output/Snap%201.png)
 ![Servlet Basics](Ex-5A/Output/Snap%202.png)
+
+<div style="page-break-after: always"></div>
+
+<h1 align="center">Form Printing using Servlets</h1>
+
+- Ex No. : 5B
+- Date :
+
+# Aim
+The aim of this exercise is to learn about servlets and how to use them to print the data from a form.
+
+# Procedure
+1. Create a Java project and add a servlet to it.
+2. Add the servlet to the `web.xml` file.
+3. Create an HTML file and add a form to it.
+4. Add the link to the servlet in the `action` attribute of the form tag.
+5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
+6. Add a function to validate the form.
+7. Add an event listener to the form to call the function when the form is submitted.
+8. Print the data from the form.
+
+# Program
+* index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Space Form Printing</title>
+</head>
+<body>
+    <div class="flex-col">
+        <h1>Space Form Printing</h1>
+        <form class="flex-col" action="spaceform" method="post">
+            <label for="planet">Enter a Planet</label>
+            <input type="name" id="planet" name="planet" placeholder="Enter the planet Name" />
+            <input type="submit" value="Print" />
+          </form>
+    </div>
+</body>
+</html>
+```
+* SpaceForm.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class SpaceForm extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Space Form</title></head>");
+        out.println("<body class='flex-col'><h1>Space Form</h1>");
+        out.println("<h2>Planet: " + request.getParameter("planet") + "</h2>");
+        out.println("</body></html>");
+    }
+}
+```
+* web.xml
+```xml
+<web-app>
+    <servlet>
+      <servlet-name>SpaceForm</servlet-name>
+      <servlet-class>SpaceForm</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpaceForm</servlet-name>
+        <url-pattern>/spaceform</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+
+* style.css
+```css
+html {
+    background-image: url("./Starry_Background.jpg");
+    color:antiquewhite;
+}
+
+input {
+    height: 2rem;
+    width: 7rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    scale: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    scale: 1.1;
+    transition: all 0.5s ease-in-out;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+select {
+    height: 2rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+}
+```
+
+# Output
+![Space Form Printing](SFP/Output/Snap%201.png)
+![Space Form Printing](SFP/Output/Snap%202.png)
+
+<div style="page-break-after: always"></div>
+
+
+<h1 align="center">Session Management - Cookies</h1>
+
+- Ex No. : 6A
+- Date :
+
+# Aim
+The aim of this exercise is to learn about cookies and how to use them to manage sessions.
+
+# Procedure
+1. Create a Java project and add a servlet to it.
+2. Add the servlet to the `web.xml` file.
+3. Create an HTML file and add a form to it.
+4. Add the link to the servlet in the `action` attribute of the form tag.
+5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
+6. Add a function to validate the form.
+7. Add an event listener to the form to call the function when the form is submitted.
+8. Add a button to restore the session.
+
+# Program
+* index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Space Cookies</title>
+</head>
+<body>
+    <div class="flex-col">
+        <h1>Space Cookies</h1>
+        <form class="flex-col" action="spacecookie" method="post">
+            <label for="space">Enter a Space Object</label>
+            <input type="name" id="space" name="space" placeholder="Enter the space object Name" />
+            <label for="distance">Enter the distance from Earth</label>
+            <input type="number" id="distance" name="distance" placeholder="Enter the distance from Earth" />
+            <input type="submit" value="Store" />
+          </form>
+    </div>
+</body>
+</html>
+```
+* SpaceCookie.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class SpaceCookie extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Cookie cookie = new Cookie(request.getParameter("space"), request.getParameter("distance"));
+        cookie.setMaxAge(60*60*24);
+        response.addCookie(cookie);
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Space Cookie</title></head>");
+        out.println("<body class='flex-col'><h1>Space Cookie</h1>");
+        out.println("<a href='restorespacecookie'>Click here to see the cookie</a>");
+        out.println("</body></html>");
+    }
+}
+```
+* RestoreSpaceCookie.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class RestoreSpaceCookie extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Cookie[] cookies = request.getCookies();
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Restore Space Cookie</title></head>");
+        out.println("<body class='flex-col'><h1>Restore Space Cookie</h1>");
+        for(Cookie cookie : cookies) {
+            out.println("<h2>" + cookie.getName() + ": " + cookie.getValue() + "</h2>");
+        }
+        out.println("</body></html>");
+    }
+}
+```
+* web.xml
+```xml
+<web-app>
+    <servlet>
+      <servlet-name>SpaceCookie</servlet-name>
+      <servlet-class>SpaceCookie</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpaceCookie</servlet-name>
+        <url-pattern>/spacecookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>RestoreSpaceCookie</servlet-name>
+      <servlet-class>RestoreSpaceCookie</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RestoreSpaceCookie</servlet-name>
+        <url-pattern>/restorespacecookie</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+* style.css
+```css
+html {
+    background-image: url("./Starry_Background.jpg");
+    color:antiquewhite;
+}
+
+input {
+    height: 2rem;
+    width: 7rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    scale: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    scale: 1.1;
+    transition: all 0.5s ease-in-out;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+select {
+    height: 2rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+}
+```
+
+# Output
+![Space Cookies](SC/Output/Snap%201.png)
+![Space Cookies](SC/Output/Snap%202.png)
+![Space Cookies](SC/Output/Snap%203.png)
 
 <div style="page-break-after: always"></div>
 
