@@ -1,0 +1,21 @@
+<web-app>
+  <servlet>
+    <servlet-name>SpaceURL</servlet-name>
+    <servlet-class>SpaceURL</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>SpaceURL</servlet-name>
+      <url-pattern>/spaceurl</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RestoreSpaceURL</servlet-name>
+    <servlet-class>RestoreSpaceURL</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>RestoreSpaceURL</servlet-name>
+      <url-pattern>/restorespaceurl</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,21 @@
+<web-app>
+  <servlet>
+    <servlet-name>SpaceHidden</servlet-name>
+    <servlet-class>SpaceHidden</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>SpaceHidden</servlet-name>
+      <url-pattern>/spacehidden</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RestoreSpaceHidden</servlet-name>
+    <servlet-class>RestoreSpaceHidden</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>RestoreSpaceHidden</servlet-name>
+      <url-pattern>/restorespacehidden</url-pattern>
+  </servlet-mapping>
+</web-app>

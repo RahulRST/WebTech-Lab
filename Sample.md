@@ -860,6 +860,333 @@ select {
 
 <div style="page-break-after: always"></div>
 
+<h1 align="center">Session Management - Hidden Form Fields</h1>
+
+- Ex No. : 6B
+- Date :
+
+# Aim
+The aim of this exercise is to learn about hidden form fields and how to use them to manage sessions.
+
+# Procedure
+1. Create a Java project and add a servlet to it.
+2. Add the servlet to the `web.xml` file.
+3. Create an HTML file and add a form to it.
+4. Add the link to the servlet in the `action` attribute of the form tag.
+5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
+6. Add a function to validate the form.
+7. Add an event listener to the form to call the function when the form is submitted.
+8. Add a button to restore the session.
+
+# Program
+* index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Space Hidden Form Fields</title>
+</head>
+<body>
+    <div class="flex-col">
+        <h1>Space Hidden Form Fields</h1>
+        <form class="flex-col" action="spacehidden" method="post">
+            <label for="space">Enter a Space Object</label>
+            <input type="name" id="space" name="space" placeholder="Enter the space object Name" />
+            <label for="distance">Enter the distance from Earth</label>
+            <input type="number" id="distance" name="distance" placeholder="Enter the distance from Earth" />
+            <input type="submit" value="Store" />
+          </form>
+    </div>
+</body>
+</html>
+```
+* SpaceHidden.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class SpaceHidden extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Space Hidden Form Fields</title></head>");
+        out.println("<body class='flex-col'><h1>Space Hidden Form Fields</h1>");
+        out.println("<form action='restorespacehidden' method='post'>");
+        out.println("<input type='hidden' name='space' value='" + request.getParameter("space") + "' />");
+        out.println("<input type='hidden' name='distance' value='" + request.getParameter("distance") + "' />");
+        out.println("<input type='submit' value='Restore' />");
+        out.println("</form></body></html>");
+    }
+}
+```
+* RestoreSpaceHidden.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class RestoreSpaceHidden extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Restore Space Hidden Form Fields</title></head>");
+        out.println("<body class='flex-col'><h1>Restore Space Hidden Form Fields</h1>");
+        out.println("<h2>Planet: " + request.getParameter("space") + "</h2>");
+        out.println("<h2>Distance: " + request.getParameter("distance") + "</h2>");
+        out.println("</body></html>");
+    }
+}
+```
+* web.xml
+```xml
+<web-app>
+    <servlet>
+      <servlet-name>SpaceHidden</servlet-name>
+      <servlet-class>SpaceHidden</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpaceHidden</servlet-name>
+        <url-pattern>/spacehidden</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>RestoreSpaceHidden</servlet-name>
+      <servlet-class>RestoreSpaceHidden</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RestoreSpaceHidden</servlet-name>
+        <url-pattern>/restorespacehidden</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+* style.css
+```css
+html {
+    background-image: url("./Starry_Background.jpg");
+    color:antiquewhite;
+}
+
+input {
+    height: 2rem;
+    width: 7rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    scale: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    scale: 1.1;
+    transition: all 0.5s ease-in-out;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+select {
+    height: 2rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+}
+```
+
+# Output
+![Space Hidden Form Fields](SH/Output/Snap%201.png)
+![Space Hidden Form Fields](SH/Output/Snap%202.png)
+![Space Hidden Form Fields](SH/Output/Snap%203.png)
+
+<div style="page-break-after: always"></div>
+
+<h1 align="center">Session Management - URL Rewriting</h1>
+
+- Ex No. : 6C
+- Date :
+
+# Aim
+The aim of this exercise is to learn about URL rewriting and how to use it to manage sessions.
+
+# Procedure
+1. Create a Java project and add a servlet to it.
+2. Add the servlet to the `web.xml` file.
+3. Create an HTML file and add a form to it.
+4. Add the link to the servlet in the `action` attribute of the form tag.
+5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
+6. Add a function to validate the form.
+7. Add an event listener to the form to call the function when the form is submitted.
+8. Add a button to restore the session.
+
+# Program
+* index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Space URL Rewriting</title>
+</head>
+<body>
+    <div class="flex-col">
+        <h1>Space URL Rewriting</h1>
+        <form class="flex-col" action="spaceurl" method="post">
+            <label for="space">Enter a Space Object</label>
+            <input type="name" id="space" name="space" placeholder="Enter the space object Name" />
+            <label for="distance">Enter the distance from Earth</label>
+            <input type="number" id="distance" name="distance" placeholder="Enter the distance from Earth" />
+            <input type="submit" value="Store" />
+          </form>
+    </div>
+</body>
+</html>
+```
+* SpaceURL.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class SpaceURL extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Space URL Rewriting</title></head>");
+        out.println("<body class='flex-col'><h1>Space URL Rewriting</h1>");
+        out.println("<a href='restorespaceurl?space=" + request.getParameter("space") + "&distance=" + request.getParameter("distance") + "'>Click here to see the URL</a>");
+        out.println("</body></html>");
+    }
+}
+```
+* RestoreSpaceURL.java
+```java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class RestoreSpaceURL extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        out.println("<html><head>");
+        out.println("<link rel='stylesheet' href='style.css' /> <title>Restore Space URL Rewriting</title></head>");
+        out.println("<body class='flex-col'><h1>Restore Space URL Rewriting</h1>");
+        out.println("<h2>Planet: " + request.getParameter("space") + "</h2>");
+        out.println("<h2>Distance: " + request.getParameter("distance") + "</h2>");
+        out.println("</body></html>");
+    }
+}
+```
+* web.xml
+```xml
+<web-app>
+    <servlet>
+      <servlet-name>SpaceURL</servlet-name>
+      <servlet-class>SpaceURL</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpaceURL</servlet-name>
+        <url-pattern>/spaceurl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>RestoreSpaceURL</servlet-name>
+      <servlet-class>RestoreSpaceURL</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RestoreSpaceURL</servlet-name>
+        <url-pattern>/restorespaceurl</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+* style.css
+```css
+html {
+    background-image: url("./Starry_Background.jpg");
+    color:antiquewhite;
+}
+
+input {
+    height: 2rem;
+    width: 7rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    scale: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    scale: 1.1;
+    transition: all 0.5s ease-in-out;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+select {
+    height: 2rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+}
+```
+
+# Output
+![Space URL Rewriting](SUR/Output/Snap%201.png)
+![Space URL Rewriting](SUR/Output/Snap%202.png)
+![Space URL Rewriting](SUR/Output/Snap%203.png)
+
+<div style="page-break-after: always"></div>
+
 <h1 align="center">Session Management - HTTP Session Objects</h1>
 
 - Ex No. : 6D
