@@ -961,6 +961,12 @@ public class AccessExam extends HttpServlet {
             out.println("<input type='text' name='answer1'>");
             out.println("Question 2: Who was the first human to walk on the moon?");
             out.println("<input type='text' name='answer2'>");
+            out.println("Question 3: What is the name of the first satellite sent into space?");
+            out.println("<input type='text' name='answer3'>");
+            out.println("Question 4: What is the name of the first dog sent into space?");
+            out.println("<input type='text' name='answer4'>");
+            out.println("Question 5: What is the name of the first chimpanzee sent into space?");
+            out.println("<input type='text' name='answer5'>");
             out.println("<input type='submit' value='Evaluate'>");
             out.println("</form>");
             out.println("</body></html>");
@@ -978,21 +984,38 @@ public class EvaluationExam extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String answer1 = request.getParameter("answer1");
         String answer2 = request.getParameter("answer2");
+        String answer3 = request.getParameter("answer3");
+        String answer4 = request.getParameter("answer4");
+        String answer5 = request.getParameter("answer5");
 
         String correctAnswer1 = "Jupiter";
         String correctAnswer2 = "Neil Armstrong";
+        String correctAnswer3 = "Sputnik";
+        String correctAnswer4 = "Laika";
+        String correctAnswer5 = "Ham";
 
         int score = 0;
-        if (answer1.equalsIgnoreCase(correctAnswer1)) {
-            score += 50;
+        if(answer1.equals(correctAnswer1)) {
+            score+=20;
         }
-        if (answer2.equalsIgnoreCase(correctAnswer2)) {
-            score += 50;
+        if(answer2.equals(correctAnswer2)) {
+            score+=20;
+        }
+        if(answer3.equals(correctAnswer3)) {
+            score+=20;
+        }
+        if(answer4.equals(correctAnswer4)) {
+            score+=20;
+        }
+        if(answer5.equals(correctAnswer5)) {
+            score+=20;
         }
 
+        // Store the score in the session for display
         HttpSession session = request.getSession();
         session.setAttribute("score", score);
 
+        // Display the score
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<html><head>");
