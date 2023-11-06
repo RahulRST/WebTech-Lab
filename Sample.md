@@ -4,14 +4,17 @@
 - Date : 
 
 # Aim
-The aim of this exercise is to learn about image mapping in HTML. Image mapping allows you to create clickable areas on an image, each linking to a different destination.
+The aim of this exercise is to understand and implement image mapping in HTML. Image mapping enables the creation of clickable regions on an image, linking each area to different destinations, thereby enhancing user interaction and navigation on web pages.
 
 # Procedure
-1. Create an HTML file and add an image using the `<img>` tag.
-2. Use the `usemap` attribute in the `<img>` tag to link the image to a map.
-3. Define the map using the `<map>` tag with a unique name.
-4. Inside the `<map>` tag, define the clickable areas using the `<area>` tag. The `shape` attribute can be used to specify the shape of the area (rect, circle, poly), and the `coords` attribute to specify the coordinates of the area.
-5. The `href` attribute in the `<area>` tag is used to specify the link destination.
+1. Create an HTML File: Initiate an HTML file and insert an image utilizing the <img> tag.
+2. Implement Image Map: Utilize the usemap attribute within the <img> tag to associate the image with a map.
+3. Define Map: Use the <map> tag with a unique name, specifying the clickable areas using the <area> tag.
+4. Utilize the shape attribute to define the shape of the area (e.g., rectangle, circle, polygon).
+5. Specify the coords attribute to determine the coordinates of the area.
+6. Employ the href attribute within the <area> tag to indicate the link destination.
+7. Style and Enhance: Add CSS to customize the appearance of the map and associated elements for better visual representation.
+8. Test and Review: Test the functionality of the created image map to ensure the accuracy of clickable regions and their linked destinations.
 
 # Program
 * index.html
@@ -56,6 +59,9 @@ The aim of this exercise is to learn about image mapping in HTML. Image mapping 
 # Output
 ![Solar System](Ex-1/Output/Snap.png)
 
+# Result
+The implementation of image mapping was successful. The image map was created and the clickable regions were linked to their respective destinations.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">CSS (Internal, External, Inline)</h1>
@@ -64,13 +70,15 @@ The aim of this exercise is to learn about image mapping in HTML. Image mapping 
 - Date : 
 
 # Aim
-The aim of this exercise is to learn about the different ways of adding CSS to an HTML document.
+The objective of this exercise is to explore and implement various approaches to apply Cascading Style Sheets (CSS) within an HTML document. The aim is to comprehend the three primary methods of incorporating CSS—internal, external, and inline—offering flexibility and control over the presentation and styling of HTML content.
 
 # Procedure
-1. Create an HTML file and add some content to it.
-2. Add a `<style>` tag inside the `<head>` tag to add internal CSS.
-3. Add an external CSS file and link it to the HTML file using the `<link>` tag.
-4. Add inline CSS to the HTML elements.
+1. Create HTML Structure: Develop an HTML file and incorporate content representing the subject matter.
+2. Implement Internal CSS: Insert a <style> tag within the HTML's <head> section to apply internal CSS styles directly to the document.
+3. External CSS Linkage: Create an external CSS file, and use the <link> tag within the HTML to connect the external CSS file to the document, enabling centralized and reusable styling.
+4. Utilize Inline CSS: Apply inline CSS directly to specific HTML elements for targeted styling.
+5. Styling the Content: Define and customize CSS rules to enhance the appearance, layout, and interactivity of the HTML content. Employ selectors and properties to style elements and create visual effects.
+6. Testing and Verification: Ensure the proper application of each CSS method and verify that the styling is correctly reflected in the HTML content.
 
 # Program
 * index.html
@@ -169,6 +177,9 @@ The aim of this exercise is to learn about the different ways of adding CSS to a
 # Output
 ![Types of Galaxies](Ex-2/Output/Snap.png)
 
+# Result
+The implementation of CSS was successful. The HTML content was styled using the three methods of CSS—internal, external, and inline.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Javascript Form Validation</h1>
@@ -177,13 +188,18 @@ The aim of this exercise is to learn about the different ways of adding CSS to a
 - Date : 
 
 # Aim
-The aim of this exercise is to learn about form validation using Javascript.
+The primary goal of this exercise is to understand and implement JavaScript-based form validation. This involves leveraging JavaScript to ensure the accuracy and integrity of user inputs within a web form, in this case, for selecting space-related data. The objective is to provide real-time validation and fetch specific space data based on the user's selection.
 
 # Procedure
-1. Create an HTML file and add a form to it.
-2. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-3. Add a function to validate the form.
-4. Add an event listener to the form to call the function when the form is submitted.
+1. HTML Structure Setup: Develop an HTML structure containing three distinct components: a header, a main section for form input and data display, and a footer.
+2. CSS Styling: Define CSS rules to style the HTML components, making use of various selectors to achieve a visually appealing layout and design.
+Form and Selection: Implement a form with a selection dropdown to choose various planets, and attach an event listener to the form to trigger form submission.
+3. JavaScript Validation Logic:
+- Handle Submission: Create a function (handleSubmit) to manage form submission, preventing default behavior and fetching space data based on the selected planet.
+- Handle Selection: Set up a function (handleSelect) to capture the selected planet from the dropdown menu.
+4. Integration of JavaScript: Link the JavaScript file (script.js) to the HTML to incorporate the validation logic into the form and enable data retrieval based on the user's selection.
+5. API Integration: Utilize an API (https://api.le-systeme-solaire.net) to retrieve specific planet-related data using the selected planet.
+Testing and Execution: Validate the form by selecting different planets and observing the fetched space data, ensuring the accuracy and responsiveness of the form validation and data presentation.
 
 # Program
 * index.html
@@ -370,6 +386,9 @@ const handleSelect = (e) => {
 # Output
 ![Space Data Validation](Ex-3/Output/Snap.png)
 
+# Result
+The implementation of JavaScript-based form validation was successful. The form was validated in real-time, and the space data was fetched based on the user's selection.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Installation of Tomcat</h1>
@@ -443,13 +462,24 @@ Thus, Apache Tomcat web server has been installed successfully.
 - Date : 
 
 # Aim
-The aim of this exercise is to learn about servlets and how to call them from an HTML file.
+The goal of this exercise is to comprehend servlets and understand their invocation from an HTML file. The focus is on linking an HTML file to a Java Servlet to display space-related data through the servlet upon a user-triggered action.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a anchor tag.
-4. Add the link to the servlet in the `href` attribute of the anchor tag.
+1. Java Project Setup:
+- Create a Java project.
+- Add a servlet to the project.
+2. web.xml Configuration:
+- Configure the servlet within the web.xml file, mapping the servlet to a URL pattern.
+3. HTML Setup:
+- Craft an HTML file containing an anchor tag to invoke the space servlet.
+4. Servlet Implementation:
+- Develop the Servlet in Java to generate space-related data.
+- Write the logic to handle HTTP GET requests.
+5. Styling with CSS:
+- Define a CSS file to style the HTML elements for a visually appealing display.
+6. Integration and Execution:
+- Ensure the successful integration of the HTML file with the servlet.
+- Test the functionality by clicking on the anchor link to access the space-related data provided by the servlet.
 
 # Program
 * index.html
@@ -566,17 +596,22 @@ select {
 - Date :
 
 # Aim
-The aim of this exercise is to learn about servlets and how to use them to print the data from a form.
+The aim here is to gain a comprehensive understanding of servlets and how they interact with HTML forms. The objective is to use a Java Servlet to retrieve and print user-submitted data from an HTML form onto a web page.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Print the data from the form.
+1. Java Project and Servlet Setup:
+- Set up a Java project.
+- Implement a servlet for data retrieval.
+2. web.xml Configuration:
+- Configure the servlet within the web.xml file, mapping it to a specific URL pattern.
+3. HTML Form Creation:
+- Craft an HTML form that captures user input, specifically for entering a planet's name.
+4. Servlet Functionality:
+- Design a servlet in Java to process HTTP POST requests, retrieving and displaying the planet name submitted via the form.
+5. Styling with CSS:
+- Define a CSS file to style the HTML form and elements for an enhanced visual representation.
+6. Integration and Execution:
+- Verify the form submission and data retrieval by inputting a planet's name and observing the servlet's presentation of the entered data onto the web page.
 
 # Program
 * index.html
@@ -690,8 +725,10 @@ select {
 ![Space Form Printing](SFP/Output/Snap%201.png)
 ![Space Form Printing](SFP/Output/Snap%202.png)
 
-<div style="page-break-after: always"></div>
+# Result
+The implementation of servlets was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
 
+<div style="page-break-after: always"></div>
 
 <h1 align="center">Session Management - Cookies</h1>
 
@@ -699,17 +736,16 @@ select {
 - Date :
 
 # Aim
-The aim of this exercise is to learn about cookies and how to use them to manage sessions.
+To learn how to utilize cookies for session management in a web application.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Add a button to restore the session.
+1. Creation of Java Project: Start by creating a Java project.
+2. Add a Servlet: Integrate a servlet to handle the cookie-based session.
+3. Web.xml Configuration: Update the web.xml file to configure servlet mappings.
+4. HTML Form for Data Entry: Create an HTML form to input relevant session data.
+5. Handling Cookies in Servlet: Implement the servlet logic to create and manage cookies.
+6. Displaying Cookie Information: Develop a servlet to display session information from cookies.
+7. Styling with CSS: Add styles using CSS to enhance the user interface.
 
 # Program
 * index.html
@@ -858,6 +894,9 @@ select {
 ![Space Cookies](SC/Output/Snap%202.png)
 ![Space Cookies](SC/Output/Snap%203.png)
 
+# Result
+The implementation of cookies was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Session Management - Hidden Form Fields</h1>
@@ -866,17 +905,16 @@ select {
 - Date :
 
 # Aim
-The aim of this exercise is to learn about hidden form fields and how to use them to manage sessions.
+To understand and implement hidden form fields for session management in web applications.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Add a button to restore the session.
+1. Java Project Setup: Create a Java project.
+2. Add a Servlet: Incorporate a servlet to manage sessions using hidden form fields.
+3. Web.xml Configuration: Configure servlet mappings in the web.xml file.
+4. HTML Form for Data Entry: Create an HTML form with hidden fields to store session data.
+5. Processing Hidden Fields in Servlet: Develop the servlet to process hidden form fields.
+6. Display Session Information: Implement a servlet to display session information obtained from hidden fields.
+7. Apply Styles with CSS: Utilize CSS to style the application interface.
 
 # Program
 * index.html
@@ -1023,6 +1061,9 @@ select {
 ![Space Hidden Form Fields](SH/Output/Snap%202.png)
 ![Space Hidden Form Fields](SH/Output/Snap%203.png)
 
+# Result
+The implementation of hidden form fields was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Session Management - URL Rewriting</h1>
@@ -1031,17 +1072,16 @@ select {
 - Date :
 
 # Aim
-The aim of this exercise is to learn about URL rewriting and how to use it to manage sessions.
+To explore URL rewriting as a means of managing sessions in a web application.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Add a button to restore the session.
+1. Java Project Initialization: Begin by creating a Java project.
+2. Servlet Integration: Develop a servlet to manage sessions through URL rewriting.
+3. Web.xml Configuration: Configure servlet mappings in the web.xml file.
+4. HTML Form Design: Create an HTML form to input session data.
+5. URL Generation in Servlet: Write servlet logic to generate URLs using session data.
+6. Display URL Information: Develop a servlet to display session information extracted from URLs.
+7. Enhance UI with CSS: Use CSS to style the application interface for better user experience.
 
 # Program
 * index.html
@@ -1185,6 +1225,9 @@ select {
 ![Space URL Rewriting](SUR/Output/Snap%202.png)
 ![Space URL Rewriting](SUR/Output/Snap%203.png)
 
+# Result
+The implementation of URL rewriting was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Session Management - HTTP Session Objects</h1>
@@ -1193,17 +1236,16 @@ select {
 - Date : 
 
 # Aim
-The aim of this exercise is to learn about HTTP session objects and how to use them to manage sessions.
+To comprehend and utilize HTTP session objects for session management within a web application.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Add a button to restore the session.
+1. Java Project Initialization: Begin by creating a Java project.
+2. Servlet for Session Management: Develop a servlet to handle HTTP session objects.
+3. Web.xml Configuration: Configure servlet mappings in the web.xml file.
+4. HTML Form for Data Input: Create an HTML form to input session data.
+5. HTTP Session Handling in Servlet: Implement servlet logic to manage session data using HTTP session objects.
+6. Display Session Information: Develop a servlet to display session information obtained from HTTP session objects.
+7. Styling with CSS: Enhance the user interface by applying CSS styles.
 
 # Program
 * index.html
@@ -1356,6 +1398,9 @@ select {
 ![Space Data Tracking](Ex-5B/Output/Snap%202.png)
 ![Space Data Tracking](Ex-5B/Output/Snap%203.png)
 
+# Result
+The implementation of HTTP session objects was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Database Management using Servlets</h1>
@@ -1364,18 +1409,23 @@ select {
 - Date :
 
 # Aim
-The aim of this exercise is to learn about database management using servlets.
+The aim of this exercise is to comprehend database management through servlets.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Store the data in the database.
-9. Display the data from the database.
+1. Project Creation and Servlet Addition:
+- Begin by creating a Java project and incorporate a servlet.
+2. web.xml Configuration:
+- Include the servlet in the web.xml file to map the servlet.
+3. HTML Form Creation:
+- Develop an HTML form that gathers data.
+4. Link Servlet to Form:
+- Assign the servlet's URL to the form's action attribute.
+5. JavaScript for Form Validation:
+- Include JavaScript within the <head> tag to validate the form.
+6. Validate and Store Form Data:
+- In the servlet, retrieve and store form data in a database.
+7. Display Database Information:
+- Create a response to display the database information to the user.
 
 # Program
 * index.html
@@ -1554,6 +1604,9 @@ select {
 ![Space Database](Ex-6/Output/Snap-2.png)
 ![Space Database](Ex-6/Output/Snap-3.png)
 
+# Result
+The implementation of database management was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
+
 <div style="page-break-after: always"></div>
 
 <h1 align="center">Online Exam Evaluation using Servlets</h1>
@@ -1562,18 +1615,23 @@ select {
 - Date :
 
 # Aim
-The aim of this exercise is to learn about online exam evaluation using servlets.
+The aim of this exercise is to learn about online exam evaluation utilizing servlets.
 
 # Procedure
-1. Create a Java project and add a servlet to it.
-2. Add the servlet to the `web.xml` file.
-3. Create an HTML file and add a form to it.
-4. Add the link to the servlet in the `action` attribute of the form tag.
-5. Add a `<script>` tag inside the `<head>` tag to add Javascript code.
-6. Add a function to validate the form.
-7. Add an event listener to the form to call the function when the form is submitted.
-8. Validate login before the exam.
-9. Evaluate the exam and display the result.
+1. Project Initialization and Servlet Addition:
+- Initialize a Java project and add a servlet for login verification.
+2. web.xml Configuration:
+- Configure the servlet mapping within the web.xml file.
+3. HTML Form Design for Exam Login:
+- Create an HTML form for user login before accessing the exam.
+4. Link Servlet to Login Form:
+- Link the servlet with the login form using the action attribute.
+5. JavaScript for Form Validation:
+- Include JavaScript in the <head> tag to validate the login form.
+6. Evaluate Exam and Display Result:
+- Develop a servlet to evaluate the exam based on user responses and display the score.
+7. Session Handling:
+- Utilize session management to authenticate and validate users attempting the exam.
 
 # Program
 * index.html
@@ -1797,6 +1855,9 @@ label {
 ![Online Exam Evaluation](Ex-9/Output/Snap%202.png)
 ![Online Exam Evaluation](Ex-9/Output/Snap%203.png)
 ![Online Exam Evaluation](Ex-9/Output/Snap%204.png)
+
+# Result
+The implementation of online exam evaluation was successful. The servlet was able to retrieve and print the user-submitted data onto the web page.
 
 <div style="page-break-after: always"></div>
 
