@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<space-items>
+    <space>
+        <name> Neptune </name> 
+        <distance> 4.5 billion km </distance>
+        <radius> 24,764 km </radius>
+        <gravity> 11.15 m/s² </gravity>
+        <temperature> -201 °C </temperature>
+    </space>
+    <space>
+        <name> Uranus </name> 
+        <distance> 2.9 billion km </distance>
+        <radius> 25,362 km </radius>
+        <gravity> 8.87 m/s² </gravity>
+        <temperature> -197 °C </temperature>
+    </space>
+    <space>
+        <name> Saturn </name> 
+        <distance> 1.4 billion km </distance>
+        <radius> 58,232 km </radius>
+        <gravity> 10.44 m/s² </gravity>
+        <temperature> -139 °C </temperature>
+    </space>
+    <space>
+        <name> Jupiter </name> 
+        <distance> 778 million km </distance>
+        <radius> 69,911 km </radius>
+        <gravity> 24.79 m/s² </gravity>
+        <temperature> -145 °C </temperature>
+    </space>
+    <space>
+        <name> Mars </name> 
+        <distance> 228 million km </distance>
+        <radius> 3,390 km </radius>
+        <gravity> 3.711 m/s² </gravity>
+        <temperature> -63 °C </temperature>
+    </space>    
+</space-items>
