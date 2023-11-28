@@ -1,0 +1,17 @@
+<details>
+    <student>
+        <name>Rahul</name>
+        <dept>CSE</dept>
+        <year>3</year>
+    </student>
+    <student>
+        <name>John</name>
+        <dept>ECE</dept>
+        <year>2</year>
+    </student>
+    <student>
+        <name>Smith</name>
+        <dept>ME</dept>
+        <year>4</year>
+    </student>
+</details>
